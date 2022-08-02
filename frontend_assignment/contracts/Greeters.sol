@@ -32,7 +32,14 @@ contract Greeters is SemaphoreCore, Ownable {
         uint256 _nullifierHash,
         uint256[8] calldata _proof
     ) external onlyOwner {
-        _verifyProof(_greeting, greeters, _nullifierHash, greeters, _proof, verifier);
+        _verifyProof(
+            _greeting,
+            greeters,
+            _nullifierHash,
+            greeters,
+            _proof,
+            verifier
+        );
 
         // Prevent double-greeting (nullifierHash = hash(root + identityNullifier)).
         // Every user can greet once.

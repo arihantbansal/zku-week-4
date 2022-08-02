@@ -29,4 +29,4 @@ task("deploy", "Deploy a Greeters contract")
         logs && console.log(`Greeters contract has been deployed to: ${greeters.address}`)
 
         return greeters
-    })
+    });
